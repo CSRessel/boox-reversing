@@ -4,6 +4,3 @@
 [submodule "edl"]
 	path = edl
 	url = https://github.com/bkerler/edl.git
-[submodule "payload-dumper-go"]
-	path = payload-dumper-go
-	url = https://github.com/ssut/payload-dumper-go.git
