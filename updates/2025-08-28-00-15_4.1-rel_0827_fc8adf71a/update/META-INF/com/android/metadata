@@ -1,0 +1,12 @@
+ota-property-files=payload_metadata.bin:3058:309685,payload.bin:3058:347432063,payload_properties.txt:347435179:155,care_map.pb:2429:582,metadata:69:718,metadata.pb:855:1479                 
+ota-required-cache=0
+ota-streaming-property-files=payload.bin:3058:347432063,payload_properties.txt:347435179:155,care_map.pb:2429:582,metadata:69:718,metadata.pb:855:1479                   
+ota-type=AB
+post-build=ONYX/BOOX_Tab_EEA/BOOX_Tab:12/SP1A.210812.016/2212291810:user/release-keys
+post-build-incremental=8326
+post-sdk-level=32
+post-security-patch-level=2025-03-01
+post-timestamp=1756311360
+pre-build=ONYX/BOOX_Tab_EEA/BOOX_Tab:12/SP1A.210812.016/2212291810:user/release-keys
+pre-build-incremental=7718
+pre-device=Go103
