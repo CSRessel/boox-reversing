@@ -1,2 +1,4 @@
 .venv
 userdata.bak
+partition-dumps/**/*.bin
+partition-dumps/**/*.img

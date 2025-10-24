@@ -1,3 +1,2 @@
-partition-dumps/**/*.bin filter=lfs diff=lfs merge=lfs -text
 updates/**/*.upx filter=lfs diff=lfs merge=lfs -text
 updates/**/*.zip filter=lfs diff=lfs merge=lfs -text
