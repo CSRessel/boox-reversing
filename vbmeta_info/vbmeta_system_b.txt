@@ -1,0 +1,62 @@
+Minimum libavb version:   1.0
+Header Block:             256 bytes
+Authentication Block:     320 bytes
+Auxiliary Block:          2432 bytes
+Algorithm:                SHA256_RSA2048
+Rollback Index:           1740787200
+Flags:                    0
+Release String:           'avbtool 1.2.0'
+Descriptors:
+    Prop: com.android.build.system_ext.fingerprint -> 'qti/qssi/qssi:12/2025-06-18_14-27_4.0.2-rel_0614_35a32af51/7718:user/release-keys'
+    Prop: com.android.build.system_ext.os_version -> '12'
+    Prop: com.android.build.system_ext.security_patch -> '2025-03-01'
+    Prop: com.android.build.product.fingerprint -> 'qti/qssi/qssi:12/2025-06-18_14-27_4.0.2-rel_0614_35a32af51/7718:user/release-keys'
+    Prop: com.android.build.product.os_version -> '12'
+    Prop: com.android.build.product.security_patch -> '2025-03-01'
+    Prop: com.android.build.product.security_patch -> '2025-03-01'
+    Prop: com.android.build.system.fingerprint -> 'qti/qssi/qssi:12/2025-06-18_14-27_4.0.2-rel_0614_35a32af51/7718:user/release-keys'
+    Prop: com.android.build.system.os_version -> '12'
+    Prop: com.android.build.system.security_patch -> '2025-03-01'
+    Prop: com.android.build.system.security_patch -> '2025-03-01'
+    Hashtree descriptor:
+      Version of dm-verity:  1
+      Image Size:            610566144 bytes
+      Tree Offset:           610566144
+      Tree Size:             4816896 bytes
+      Data Block Size:       4096 bytes
+      Hash Block Size:       4096 bytes
+      FEC num roots:         2
+      FEC offset:            615383040
+      FEC size:              4866048 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        product
+      Salt:                  c247c4fdf96a0fe01c78aeab14312d149f17b16b9f984d2f033dd3ce21467f16
+      Root Digest:           9ec16efe47ca17cdbced24f08a12af5f8643c517f4893164bcb3e6c4c5fb8644
+    Hashtree descriptor:
+      Version of dm-verity:  1
+      Image Size:            2274816000 bytes
+      Tree Offset:           2274816000
+      Tree Size:             17915904 bytes
+      Data Block Size:       4096 bytes
+      Hash Block Size:       4096 bytes
+      FEC num roots:         2
+      FEC offset:            2292731904
+      FEC size:              18128896 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        system
+      Salt:                  c247c4fdf96a0fe01c78aeab14312d149f17b16b9f984d2f033dd3ce21467f16
+      Root Digest:           49d2224d35015e91b6e39441213b2d3663856b8274e03ae7d72125fe10b0a145
+    Hashtree descriptor:
+      Version of dm-verity:  1
+      Image Size:            371494912 bytes
+      Tree Offset:           371494912
+      Tree Size:             2932736 bytes
+      Data Block Size:       4096 bytes
+      Hash Block Size:       4096 bytes
+      FEC num roots:         2
+      FEC offset:            374427648
+      FEC size:              2965504 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        system_ext
+      Salt:                  c247c4fdf96a0fe01c78aeab14312d149f17b16b9f984d2f033dd3ce21467f16
+      Root Digest:           4e3a1f8698287f3e99dc4fc58dc9327d031b77bb9a89852822a6d71d3f49dec4
