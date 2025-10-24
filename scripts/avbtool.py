@@ -1,5 +1,8 @@
 #!/usr/bin/env python2
 
+# Vendored from https://github.com/jcrutchvt10/AVBTOOL
+# 98b301c5f9efb2901200c62290d5e8e75486be25
+
 # Copyright 2016, The Android Open Source Project
 #
 # Permission is hereby granted, free of charge, to any person

@@ -1,6 +1,3 @@
-[submodule "decryptBooxUpdateUpx"]
-	path = decryptBooxUpdateUpx
-	url = https://github.com/Hagb/decryptBooxUpdateUpx.git
 [submodule "edl"]
 	path = edl
 	url = https://github.com/bkerler/edl.git
