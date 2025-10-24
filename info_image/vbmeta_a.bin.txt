@@ -1,0 +1,55 @@
+Minimum libavb version:   1.0
+Header Block:             256 bytes
+Authentication Block:     576 bytes
+Auxiliary Block:          3648 bytes
+Algorithm:                SHA256_RSA4096
+Rollback Index:           0
+Flags:                    3
+Release String:           'avbtool 1.2.0'
+Descriptors:
+    Chain Partition descriptor:
+      Partition Name:          vbmeta_system
+      Rollback Index Location: 2
+      Public key (sha1):       cdbb77177f731920bbe0a0f94f84d9038ae0617d
+    Prop: com.android.build.vendor.fingerprint -> 'Onyx/Go103/Go103:11/2024-10-24_10-59_3.5.4_2b800b967/6689:user/release-keys'
+    Prop: com.android.build.vendor.os_version -> '11'
+    Prop: com.android.build.vendor.security_patch -> '2022-09-01'
+    Prop: com.android.build.vendor.security_patch -> '2022-09-01'
+    Prop: com.android.build.recovery.fingerprint -> 'Onyx/Go103/Go103:11/2024-10-24_10-59_3.5.4_2b800b967/6689:user/release-keys'
+    Prop: com.android.build.boot.fingerprint -> 'Onyx/Go103/Go103:11/2024-10-24_10-59_3.5.4_2b800b967/6689:user/release-keys'
+    Prop: com.android.build.boot.os_version -> '11'
+    Prop: com.android.build.boot.security_patch -> '2022-09-01'
+    Prop: com.android.build.boot.security_patch -> '2022-09-01'
+    Prop: com.android.build.dtbo.fingerprint -> 'Onyx/Go103/Go103:11/2024-10-24_10-59_3.5.4_2b800b967/6689:user/release-keys'
+    Hash descriptor:
+      Image Size:            34324480 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        boot
+      Salt:                  5de8f2eab4868d84cd427a217f28b2225a9d110453bfdeaf2c78f661b201e642
+      Digest:                20e3dded6347ecae031bbf8991f0487448a760bb2db9b2f1c6adb64c9ce983da
+    Hash descriptor:
+      Image Size:            141386 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        dtbo
+      Salt:                  fd92f5201feef432f22f98c2e5cd2f2bc0d788a12f3bc0ec1d881c233ad1fb40
+      Digest:                1ac9d9507d8ae7e59b177cb2243638cebc43d359398f17427dcde8ce6edd5f25
+    Hash descriptor:
+      Image Size:            41627648 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        recovery
+      Salt:                  4d601128b07c1862d28fd72d8a7ef63a81b3cf98d5c1278fd04e5355e9331982
+      Digest:                d67f94f6adb2908e64082308a7a2375eec032d1b1cc65e2ac7aeb33829b3c9b1
+    Hashtree descriptor:
+      Version of dm-verity:  1
+      Image Size:            494891008 bytes
+      Tree Offset:           494891008
+      Tree Size:             3903488 bytes
+      Data Block Size:       4096 bytes
+      Hash Block Size:       4096 bytes
+      FEC num roots:         2
+      FEC offset:            498794496
+      FEC size:              3948544 bytes
+      Hash Algorithm:        sha1
+      Partition Name:        vendor
+      Salt:                  9e9e0300ed1ccf83aedd5336365572f089d5b20be82c3193b50e2a5ffbb1e197
+      Root Digest:           a71164492e8d092f24ca3e1dd5f76da6d08f64ab

@@ -1,0 +1,22 @@
+Footer version:           1.0
+Image size:               100663296 bytes
+Original image size:      41676800 bytes
+VBMeta offset:            41676800
+VBMeta size:              640 bytes
+--
+Minimum libavb version:   1.0
+Header Block:             256 bytes
+Authentication Block:     0 bytes
+Auxiliary Block:          384 bytes
+Algorithm:                NONE
+Rollback Index:           0
+Flags:                    0
+Release String:           'avbtool 1.2.0'
+Descriptors:
+    Hash descriptor:
+      Image Size:            41676800 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        recovery
+      Salt:                  6899a7fe2c3c077a7dbaa2ffa7c7c549229e4df761ee2ce386404205e711acbe
+      Digest:                5b5dd019b21b3e8c68686fdc267a52a78528756ddf834f17f7adfb7f7255210a
+    Prop: com.android.build.recovery.fingerprint -> 'Onyx/Go103/Go103:11/2025-06-18_14-27_4.0.2-rel_0614_35a32af51/7718:user/release-keys'
