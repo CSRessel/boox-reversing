@@ -2,3 +2,4 @@
 userdata.bak
 partition-dumps/**/*.bin
 partition-dumps/**/*.img
+scripts/magisk/
