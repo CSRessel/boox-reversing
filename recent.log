@@ -1,0 +1,19 @@
+: 1752087912:0;fastboot flash boot magisk_patched-29000_F55YV.img
+: 1752087940:0;fastboot boot magisk_patched_Jc7cB.img
+: 1752087971:0;fastboot boot magisk_patched-29000_F55YV.img
+: 1754764959:0;./edl --loader sm6225.bin w boot_a extracted_edl_20250809/boot_a_magisk_patched-29000_IsHAi.img
+: 1754764982:0;./edl --loader sm6225.bin w boot_b extracted_edl_20250809/boot_b_magisk_patched-29000_2zita.img
+: 1761320473:0;mkdir scripts/magisk
+: 1761320474:0;cp native/out/x86_64/* ../boox-reversing/scripts/magisk/
+: 1761320495:0;du -sh scripts/magisk/*
+: 1761320572:0;./scripts/magisk/magiskboot --help
+: 1761320588:0;git re --staged scripts/magisk
+: 1761320607:0;echo "scripts/magisk/" >> .gitignore
+: 1761329598:0;git co -m "Add magiskboot and other tools"
+: 1761818745:0;ls scripts/magisk
+: 1761818764:0;echo $(pwd)/scripts/magisk
+: 1761818779:0;export PATH="$PATH:$(pwd)/scripts/magisk"
+: 1761818784:0;which magiskboot
+: 1761821675:0;magiskboot unpack stock_boot_a.img 
+: 1762143924:0;tail -n 10000 ~/.zsh_history | grep magisk
+: 1762143934:0;tail -n 10000 ~/.zsh_history | grep magisk > recent.log
