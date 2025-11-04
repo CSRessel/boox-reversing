@@ -1,0 +1,24 @@
+on early-init
+    mount proc proc /proc
+    mount sysfs sysfs /sys
+    mount tmpfs tmpfs /dev mode=0755
+    mkdir /dev/pts 0755
+    mount devpts devpts /dev/pts
+    chmod 0755 /sbin
+    symlink /sbin/toybox /sbin/sh
+    write /proc/sys/kernel/printk "7 4 1 7"
+
+on init
+    setprop ro.secure 0
+    setprop ro.adb.secure 0
+    # USB ADB path (works if gadget + uevent rules cooperate)
+    setprop sys.usb.config adb
+    # TCP fallback (helpful if USB nodes/permissions aren't right yet)
+    setprop service.adb.tcp.port 5555
+
+on property:sys.usb.config=adb
+    start adbd
+
+service adbd /sbin/adbd
+    oneshot
+    seclabel u:r:adbd:s0
