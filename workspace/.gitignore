@@ -1,4 +1,5 @@
 stock_ramdisk
 stock_boot_a.img
-
 stock_vbmeta_a.img
+**/*.img
+**/kernel
