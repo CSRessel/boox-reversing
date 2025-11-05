@@ -1,0 +1,25 @@
+Footer version:           1.0
+Image size:               100663296 bytes
+Original image size:      35495936 bytes
+VBMeta offset:            35495936
+VBMeta size:              896 bytes
+--
+Minimum libavb version:   1.0
+Header Block:             256 bytes
+Authentication Block:     0 bytes
+Auxiliary Block:          640 bytes
+Algorithm:                NONE
+Rollback Index:           0
+Flags:                    0
+Release String:           'avbtool 1.2.0'
+Descriptors:
+    Hash descriptor:
+      Image Size:            34324480 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        boot
+      Salt:                  5de8f2eab4868d84cd427a217f28b2225a9d110453bfdeaf2c78f661b201e642
+      Digest:                20e3dded6347ecae031bbf8991f0487448a760bb2db9b2f1c6adb64c9ce983da
+    Prop: com.android.build.boot.fingerprint -> 'Onyx/Go103/Go103:11/2024-10-24_10-59_3.5.4_2b800b967/6689:user/release-keys'
+    Prop: com.android.build.boot.os_version -> '11'
+    Prop: com.android.build.boot.security_patch -> '2022-09-01'
+    Prop: com.android.build.boot.security_patch -> '2022-09-01'
