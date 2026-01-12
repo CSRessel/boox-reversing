@@ -3,3 +3,14 @@ userdata.bak
 partition-dumps/**/*.bin
 partition-dumps/**/*.img
 scripts/magisk/
+
+# Tools
+/AVBTOOL/
+/edl/
+/Magisk/
+/payload-dumper/
+/.claude
+docs.md
+
+# Temporary or sensitive files
+/bootloop-*

@@ -1,0 +1,820 @@
+: 1761202441:0;sudo apt install python2
+: 1761202471:0;gh repo clone jcrutchvt10/AVBTOOL
+: 1761239352:0;which python2
+: 1761239584:0;pip --version
+: 1761239630:0;curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+: 1761239633:0;vim get-pip.py
+: 1761239671:0;sudo python2 get-pip.py
+: 1761239682:0;which pip2
+: 1761239700:0;sudo pip2 install pycryptodome
+: 1761239708:0;./avbtool --help
+: 1761246980:0;cat gptnames.txt
+: 1761263392:0;ls -1 partition-dumps/*
+: 1761263497:0;ls -1 partition-dumps/* | grep vbm
+: 1761263546:0;./AVBTOOL/avbtool info_image partition-dumps/lun0/vbmeta_system_{a,b}.bin 
+: 1761263607:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_system_b.bin
+: 1761263652:0;ls -1 partition-dumps/* | grep vendor
+: 1761266659:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun4/vbmeta_a.bin
+: 1761266751:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun4/vbmeta_b.bin
+: 1761266764:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_system_a.bin
+: 1761266898:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_system_a.bin | grep partition
+: 1761266903:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_system_a.bin | grep Partition
+: 1761266908:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_system_b.bin | grep Partition
+: 1761267338:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_a.bin | grep Partition
+: 1761267343:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun4/vbmeta_a.bin | grep Partition
+: 1761267432:0;mkdir vbmeta_info
+: 1761267450:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun4/vbmeta_a.bin > vbmeta_info/vbmeta_a.txt
+: 1761267456:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun4/vbmeta_b.bin > vbmeta_info/vbmeta_b.txt
+: 1761267469:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_a.bin > vbmeta_info/vbmeta_a.txt
+: 1761267490:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_system_a.bin > vbmeta_info/vbmeta_system_a.txt
+: 1761267494:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun0/vbmeta_system_b.bin > vbmeta_info/vbmeta_system_b.txt
+: 1761267516:0;git rm --cached AVBTOOL
+: 1761267525:0;git re --staged AVBTOOL
+: 1761267534:0;git co -m "Examine vbmeta"
+: 1761267629:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun1/xbl_a.bin
+: 1761267647:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun4/boot_a.bin
+: 1761267747:0;./AVBTOOL/avbtool info_image --image partition-dumps/lun4/boot_b.bin
+: 1761273324:0;find partition-dumps/ -type f -exec sh -c 'OUTPUT=$(./AVBTOOL/avbtool info_image --image "$1"); [ -n "$OUTPUT" ] && FILENAME=$(basename "$1") && echo "$OUTPUT" > "info_image/$FILENAME.txt"' _ {} \;
+: 1761273331:0;git add info_image/
+: 1761274179:0;mv avbtool ../
+: 1761274187:0;mv AVBTOOL ../
+: 1761274205:0;./avbtool info_image --image partition-dumps/lun0/vbmeta_system_a.bin
+: 1761275311:0;touch scripts/make-manifest.sh
+: 1761275314:0;vim scripts/make-manifest.sh
+: 1761275326:0;chmod +x scripts/make-manifest.sh
+: 1761275359:0;scripts/make-manifest.sh
+: 1761275370:0;mv scripts/avbtool scripts/avbtool.py
+: 1761275425:0;tar czf partition-dumps.tar.gz -C partition-dumps .
+: 1761275434:0;ls decryptBooxUpdateUpx/
+: 1761275460:0;tail partition-manifest.tsv
+: 1761275498:0;cd decryptBooxUpdateUpx
+: 1761275511:0;ls decryptBooxUpdateUpx
+: 1761276107:0;mv scripts/avbtool.py avbtool
+: 1761276130:0;git co -m "Add manifest of all partitions"
+: 1761276139:0;vim ../AVBTOOL
+: 1761276200:0;mv avbtool scripts/avbtool.py
+: 1761276217:0;ls -A decryptBooxUpdateUpx
+: 1761276243:0;mv decryptBooxUpdateUpx/*Boox*.* scripts
+: 1761278996:0;du -sh partition-dumps/*
+: 1761279010:0;tar -v -I 'zstd -19 --long=31' -cf partition-dumps.tar.zst partition-dumps
+: 1761279365:0;du -sh partition-dumps/lun0
+: 1761279367:0;du -sh partition-dumps/lun0/*
+: 1761279376:0;du -sh partition-dumps/lun1/*
+: 1761280962:0;./scripts/avbtool.py info_image --image partition-dumps/lun0/vbmeta_system_a.bin
+: 1761281014:0;./scripts/avbtool.py info_image --image partition-dumps/lun4/vbmeta_a.bin
+: 1761283321:0;cd ~/Downloads
+: 1761283331:0;cd ~/Documents/builds
+: 1761283352:0;mv ~/Downloads/jetbrains-toolbox-3.0.0.59313.tar.gz ./
+: 1761283360:0;tar -xvf jetbrains-toolbox-3.0.0.59313.tar.gz
+: 1761283363:0;cd jetbrains-toolbox-3.0.0.59313
+: 1761283365:0;ls bin
+: 1761283377:0;cd bin
+: 1761283379:0;./jetbrains
+: 1761283426:0;cd ~/Documents/builds/jetbrains-toolbox-3.0.0.59313/bin
+: 1761283430:0;./jetbrains-toolbox
+: 1761284162:0;ls ~/.local/bin
+: 1761284237:0;cd
+: 1761284243:0;ls .android
+: 1761284260:0;ls .installed_packages
+: 1761285433:0;git co -m "add android home"
+: 1761285451:0;vim dot_zshrc.tmpl
+: 1761285554:0;git clone --recurse-submodules https://github.com/topjohnwu/Magisk.git
+: 1761285652:0;mv partition-dumps.tar.zst ~/Downloads/boox_2025-10-24-partition-dumps.tar.zst
+: 1761285664:0;cd ../Magisk
+: 1761285890:0;which python
+: 1761285892:0;which python3
+: 1761285897:0;python3 --version
+: 1761285908:0;uv venv -p 3.12
+: 1761285936:0;./build.py
+: 1761285978:0;source ./.venv/bin/activate
+: 1761285992:0;./build.py ndk
+: 1761286018:0;echo $ANDROID_HOME
+: 1761286022:0;echo $ANDROID_STUDIO
+: 1761286039:0;ls ~/Android
+: 1761286040:0;ls ~/Android/Sdk
+: 1761286044:0;ls ~/Android/Sdk/ndk
+: 1761286048:0;./build.py all
+: 1761290102:0;ls tools
+: 1761290109:0;ls native
+: 1761290128:0;ls native/out/x86_64/
+: 1761320473:0;mkdir scripts/magisk
+: 1761320474:0;cp native/out/x86_64/* ../boox-reversing/scripts/magisk/
+: 1761320495:0;du -sh scripts/magisk/*
+: 1761320572:0;./scripts/magisk/magiskboot --help
+: 1761320588:0;git re --staged scripts/magisk
+: 1761320607:0;echo "scripts/magisk/" >> .gitignore
+: 1761320609:0;git ade
+: 1761322013:0;cd ../homelab
+: 1761322209:0;sudo apt isntall tree
+: 1761322215:0;sudo apt install tree
+: 1761322219:0;tree
+: 1761329598:0;git co -m "Add magiskboot and other tools"
+: 1761818740:0;ls scripts
+: 1761818745:0;ls scripts/magisk
+: 1761818779:0;export PATH="$PATH:$(pwd)/scripts/magisk"
+: 1761818784:0;which magiskboot
+: 1761818797:0;ls
+: 1761818803:0;mkdir workspace
+: 1761821606:0;ls partition-dumps/*
+: 1761821624:0;cp partition-dumps/lun4/boot_a.bin workspace/stock_boot_a.img
+: 1761821649:0;cp partition-dumps/lun4/vbmeta_a.bin workspace/stock_vbmeta_a.img
+: 1761821651:0;cd workspace
+: 1761821652:0;ls
+: 1761821658:0;mkdir tiny_ramdisk
+: 1761821659:0;mkdir out
+: 1761821675:0;magiskboot unpack stock_boot_a.img 
+: 1761821677:0;ls
+: 1761821693:0;mkdir unpack
+: 1761821707:0;mv {dtb,kernel,ramdisk.cpio} unpack
+: 1761821707:0;ls
+: 1761821710:0;ls unpack
+: 1761821770:0;which cpio
+: 1761821774:0;cpio --help
+: 1761821892:0;touch tiny_ramdisk/{init,init.rc,uventd.rc}
+: 1761821895:0;mkdir tiny_ramdisk/sbin/
+: 1761879609:0;mkdir tiny_ramdisk/{dev,proc,sys}
+: 1761879610:0;git st
+: 1761879614:0;vim
+: 1761879883:0;mkdir stock_ramdisk\
+cd stock_ramdisk\
+gzip -dc ../unpack/ramdisk.cpio | cpio -idmv
+: 1761879884:0;ls
+: 1761879887:0;ls ../unpack
+: 1761879913:0;cpio -idmv ../unpack/ramdisk.cpio
+: 1761879923:0;ls -lh workspace/unpack
+: 1761879930:0;man cpio
+: 1761879970:0;ls
+: 1761879977:0;ls workspace/stock_ramdisk
+: 1761879982:0;ls
+: 1761879985:0;ls ../unpack
+: 1761880005:0;tldr cpio
+: 1761880037:0;cpio -idmv < ../unpack/ramdisk.cpio
+: 1761880038:0;ls
+: 1761880058:0;ls -A
+: 1761880061:0;ls .backup
+: 1761880067:0;sudo ls .backup
+: 1761880079:0;ls -lh
+: 1761880086:0;ls -lhA
+: 1761880101:0;chmod -R o+r .backup
+: 1761880106:0;sudo chmod -R o+r .backup
+: 1761880107:0;ls
+: 1761880110:0;ls -lhG
+: 1761880111:0;ls -lhA
+: 1761880129:0;sudo chmod -R u+r o-r .backup
+: 1761880133:0;sudo chmod -R u+r .backup
+: 1761880139:0;sudo chmod -R o-r .backup
+: 1761880141:0;git st
+: 1761880145:0;ls -lhA
+: 1761880149:0;ls .backup
+: 1761880153:0;ls -A .backup
+: 1761880164:0;ls avb
+: 1761880176:0;ls proc
+: 1761880181:0;ls -a proc
+: 1761880186:0;ls -A sys
+: 1761880190:0;ls -A dev
+: 1761880242:0;ls system
+: 1761880246:0;ls system/bin/
+: 1761880253:0;ls mnt
+: 1761880255:0;ls overlay.d
+: 1761880259:0;ls overlay.d/sbin/
+: 1761880265:0;ls debug_ramdisk
+: 1761880267:0;ls avb
+: 1761880301:0;cp init ../tiny_ramdisk/init
+: 1761880304:0;git ad
+: 1761880316:0;vim
+: 1761880342:0;cd workspace/unpack
+: 1761880342:0;ls
+: 1761880353:0;hexdump --help
+: 1761880369:0;hexdump dtb | less
+: 1761880387:0;ls
+: 1761880512:0;git st
+: 1761880514:0;ls
+: 1761880522:0;ls ../tiny_ramdisk
+: 1761880531:0;ls ./*
+: 1761880584:0;ls ../tiny_ramdisk
+: 1761880590:0;cat ../tiny_ramdisk/uventd.rc
+: 1761880593:0;rm ../tiny_ramdisk/uventd.rc
+: 1761880678:0;git st
+: 1762143924:0;tail -n 10000 ~/.zsh_history | grep magisk
+: 1762143934:0;tail -n 10000 ~/.zsh_history | grep magisk > recent.log
+: 1762143934:0;code
+: 1762143940:0;claude
+: 1762143977:0;ls ..
+: 1762144042:0;vim ~/.claude
+: 1762144231:0;git st
+: 1762144246:0;codex
+: 1762144272:0;git st
+: 1762190692:0;btop
+: 1762190703:0;ps aux | grep awk
+: 1762191488:0;cd boox-reversing
+: 1762191489:0;ls
+: 1762191494:0;du -sh ./partition-dumps/*
+: 1762191501:0;exit
+: 1762191507:0;git st
+: 1762191571:0;git di
+: 1762191572:0;git st
+: 1762191576:0;ls
+: 1762191578:0;cd ..
+: 1762191578:0;ls
+: 1762191595:0;less ~/.zsh_history
+: 1762191671:0;exit
+: 1762191678:0;ls ~/.claude
+: 1762191687:0;cat ~/.claude.json
+: 1762191769:0;git st
+: 1762191785:0;vim workspace/tiny_ramdisk/README.md
+: 1762191797:0;exit
+: 1762218510:0;cd Documents/source/boox-reversing
+: 1762218511:0;ls -lh
+: 1762218513:0;git st
+: 1762218709:0;cd workspace/
+: 1762218715:0;cat tiny_ramdisk/init*
+: 1762218731:0;diff tiny_ramdisk/init stock_ramdisk/init
+: 1762219772:0;adb devices
+: 1762219809:0;ls
+: 1762219815:0;mkdir stock_bin
+: 1762219816:0;cd stock_bin
+: 1762219834:0;adb pull /system/bin/toybox ./toybox
+: 1762219850:0;adb --help
+: 1762220882:0;adb pull /sbin/toybox ./toybox
+: 1762220915:0;adb pull /system/bin/toybox 
+: 1762220953:0;adb root
+: 1762221077:0;adb reboot edl
+: 1762221083:0;adb devices
+: 1762221087:0;edl devices
+: 1762221096:0;ls ~/Documents/builds/platform-tools
+: 1762221100:0;fastboot --help
+: 1762221103:0;fastboot devices
+: 1762221120:0;fastboot getvar 
+: 1762221171:0;ls ../
+: 1762221173:0;ls ../..
+: 1762221176:0;ls ../../edl/
+: 1762221182:0;../../edl/edl --help
+: 1762221201:0;cd ../../edl/
+: 1762221202:0;ls
+: 1762221205:0;ls -A
+: 1762221219:0;.venv/bin/activate
+: 1762221222:0;source .venv/bin/activate
+: 1762221223:0;ls
+: 1762221227:0;./edl --help
+: 1762221441:0;./edl --help | get
+: 1762221447:0;./edl --help | grep get
+: 1762221472:0;adb root
+: 1762221728:0;adb devices
+: 1762221732:0;adb pull /system/bin/toybox 
+: 1762221733:0;adb root
+: 1762221742:0;adb shell whoami
+: 1762221748:0;vim
+: 1762221819:0;adb shell su -c 'cp /system/bin/toybox /data/local/tmp/ && chmod 0644 /data/local/tmp/toybox'
+: 1762221931:0;adb pull /data/local/tmp/toybox
+: 1762221935:0;ls
+: 1762221939:0;git st
+: 1762221948:0;mv toybox ../workspace/stock_bin/
+: 1762221963:0;adb shell su -c 'cp /system/bin/adbd /data/local/tmp/ && chmod 0644 /data/local/tmp/adbd'
+: 1762221974:0;adb pull /system/bin/adbd
+: 1762222341:0;adb shell "which adbd"
+: 1762222350:0;adb shell 'echo $PATH'
+: 1762222367:0;adb pull /apex/com.android.runtime/bin
+: 1762222370:0;ls
+: 1762222372:0;git st
+: 1762222373:0;ls bin/
+: 1762222376:0;rm -rf bin
+: 1762222381:0;cd ../workspace/stock_bin
+: 1762222381:0;ls
+: 1762222406:0;adb shell ls /system/bin/adbd /vendor/bin/adbd /sbin/adbd /system/xbin/adbd
+: 1762222413:0;adb shell ps -A | grep adbd
+: 1762222490:0;adb shell ls /vendor/bin/
+: 1762222596:0;git st
+: 1762222606:0;git di
+: 1762222607:0;git st
+: 1762222663:0;adb shell ls /apex
+: 1762222673:0;adb shell 'su -c ls /apex'
+: 1762222685:0;adb shell 'su -c ls -l /apex/com.android.adbd'
+: 1762222698:0;adb shell 'su -c ls -l /apex/com.android.adbd/bin'
+: 1762222733:0;adb shell su -c 'cp /apex/com.android.adbd/bin/adbd /data/local/tmp/ && chmod 0644 /data/local/tmp/adbd'
+: 1762222746:0;adb pull /data/local/tmp/adbd
+: 1762222747:0;ls
+: 1762222748:0;ls -l
+: 1762222757:0;cp ./* ../tiny_ramdisk/sbin/
+: 1762222760:0;git st
+: 1762222787:0;echo "stock_ramdisk\nstock_boot_a.img" > ../.gitignore
+: 1762222788:0;git st
+: 1762222789:0;git ad
+: 1762222826:0;git re --staged ../stock_ramdisk
+: 1762222827:0;git st
+: 1762222838:0;git re --staged ../stock_*.img
+: 1762222839:0;git st
+: 1762222855:0;git echo "\nstock_vbmeta_a.img" >> ../.gitignore
+: 1762222860:0;echo "\nstock_vbmeta_a.img" >> ../.gitignore
+: 1762222861:0;git st
+: 1762222865:0;git re --staged ./
+: 1762222865:0;git st
+: 1762222866:0;git ad
+: 1762222885:0;git re --staged ./
+: 1762222885:0;git st
+: 1762222890:0;git log
+: 1762222898:0;git co -m "Setup tiny ramdisk layout"
+: 1762222901:0;git ad
+: 1762222901:0;git st
+: 1762222915:0;git co -m "Extract key binaries from stock"
+: 1762223402:0;ls unpack
+: 1762223419:0;git lfs migrate import --include="workspace/unpack/kernel"
+: 1762223421:0;git st
+: 1762223423:0;git log
+: 1762223424:0;git pushf
+: 1762223429:0;ls
+: 1762223431:0;cd ..
+: 1762223432:0;ls -A
+: 1762223435:0;vim .gitattributes
+: 1762223440:0;git lfs migrate import --include="workspace/unpack/kernel"
+: 1762223442:0;git st
+: 1762223626:0;ls partition-dumps/*
+: 1762223635:0;ls -lh partition-dumps/* | grep vendor
+: 1762223648:0;ls -lh partition-dumps/* | grep init
+: 1762223878:0;adb shell ls /venodr
+: 1762223881:0;adb shell ls /vendor
+: 1762223893:0;adb shell ls -lh /vendor/ueventd.rc
+: 1762223917:0;adb shell su -c 'cp /vendor/ueventd.rc /data/local/tmp/ && su -c chmod 0644 /data/local/tmp/adbd'
+: 1762223924:0;adb pull /data/local/tmp/ueventd.rc
+: 1762223925:0;ls
+: 1762223942:0;mv ueventd.rc workspace/tiny_ramdisk/
+: 1762223943:0;git st
+: 1762223946:0;cd workspace
+: 1762223957:0;adb shell ls /data/local/tmp
+: 1762223962:0;adb shell rm /data/local/*
+: 1762223969:0;adb shell rm '/data/local/*'
+: 1762223977:0;adb shell rm '/data/local/adbd
+: 1762223978:0;ls
+: 1762223979:0;git st
+: 1762223984:0;ls
+: 1762223985:0;ls tiny_ramdisk
+: 1762223989:0;mv tiny_ramdisk/README.md ./
+: 1762223991:0;cat README.md
+: 1762224006:0;ls
+: 1762224007:0;git st
+: 1762224027:0;tree tiny_ramdisk
+: 1762224044:0;ls -lh tiny_ramdisk
+: 1762224128:0;git st
+: 1762224132:0;vim
+: 1762224152:0;ls
+: 1762224200:0;ls out
+: 1762224204:0;cp stock_boot_a.img out
+: 1762224205:0;cd out
+: 1762224214:0;cd ../../
+: 1762224216:0;export PATH="$PATH:$(pwd)/scripts/magisk"
+: 1762224218:0;cd workspace/out
+: 1762224248:0;cd ../tiny_ramdisk
+: 1762224253:0;find . | cpio -H newc -o | gzip > ../out/tiny_ramdisk.cpio.gz
+: 1762224258:0;cd ../out
+: 1762224258:0;ls
+: 1762224268:0;magiskboot unpack boot_tinyadb.img
+: 1762224281:0;magiskboot --help
+: 1762224295:0;magiskboot repack --help
+: 1762224315:0;ls
+: 1762224319:0;ls ..
+: 1762224322:0;rm stock_boot_a.img
+: 1762224322:0;ls
+: 1762224347:0;magiskboot repack -n ../stock_boot_a.img tiny_ramdisk.img
+: 1762224349:0;ls
+: 1762224368:0;../../scripts/avbtool.py info_image tiny_ramdisk.img
+: 1762224373:0;../../scripts/avbtool.py info_image --image tiny_ramdisk.img
+: 1762224718:0;cd ../..
+: 1762224725:0;export PATH="$PATH:$(pwd)/scripts"
+: 1762224730:0;cd workspace/out
+: 1762224730:0;ls
+: 1762225033:0;avbtool.py info_image --image ../stock_boot_a.img
+: 1762225155:0;avbtool.py info_image --image ../stock_vbmeta_a.img
+: 1762225193:0;avbtool.py --help
+: 1762225228:0;ls ../../scripts
+: 1762225337:0;cd ../
+: 1762225339:0;cd ..
+: 1762225340:0;tmux
+: 1762225342:0;echo $PATH
+: 1762225347:0;ls
+: 1762225350:0;cd workspace/out
+: 1762225365:0;avbtool.py info_image --image tiny_ramdisk.img
+: 1762225370:0;clear
+: 1762225373:0;avbtool.py info_image --image tiny_ramdisk.img
+: 1762225376:0;cd workspace
+: 1762225377:0;clear
+: 1762225383:0;avbtool.py info_image --image stock_boot_a.img
+: 1762225887:0;cd workspace/out
+: 1762225895:0;find . -print0
+: 1762225913:0;ls
+: 1762226883:0;cd ..
+: 1762226884:0;ls
+: 1762226886:0;cd tiny_ramdisk
+: 1762226886:0;ls
+: 1762226890:0;ls -lhA
+: 1762226895:0;cat init.rc
+: 1762226898:0;vim init.rc
+: 1762226920:0;git st
+: 1762226923:0;git ad
+: 1762226933:0;cd ..
+: 1762226936:0;rm out/*
+: 1762226939:0;git st
+: 1762226939:0;git ad
+: 1762226943:0;git st
+: 1762226962:0;git re --staged tiny_ramdisk/ueventd.rc
+: 1762226963:0;git st
+: 1762226976:0;git co -m "Add simple init.rc default"
+: 1762226976:0;git st
+: 1762226979:0;git ad
+: 1762226986:0;git log
+: 1762227034:0;git st
+: 1762227049:0;git di HEAD
+: 1762227053:0;git log
+: 1762227066:0;git co -m "Extract ueventd.rc from device"
+: 1762227068:0;git st
+: 1762227830:0;ls
+: 1762227833:0;ls stock_ramdisk
+: 1762227839:0;ls -lh stock_ramdisk 
+: 1762227864:0;vim stock_ramdisk/init
+: 1762227969:0;git st
+: 1762227973:0;ls ../out
+: 1762227975:0;ls out
+: 1762227980:0;cd tiny_ramdisk
+: 1762227980:0;ls
+: 1762227986:0;find . -print0 | cpio --null -o --format=newc -R 0:0 | gzip > ../out/tiny_ramdisk.cpio.gz
+: 1762227989:0;ls -lh sbin
+: 1762228001:0;ls --help
+: 1762228004:0;man ls
+: 1762228052:0;stat -c '%a %n' sbin/*
+: 1762228058:0;chmod +x sbin/adbd
+: 1762228063:0;chmod +x sbin/toybox 
+: 1762228066:0;ls -lh sbn
+: 1762228068:0;ls -lh sbin
+: 1762228072:0;stat -c '%a %n' sbin/*
+: 1762228074:0;git st
+: 1762228076:0;find . -print0 | cpio --null -o --format=newc -R 0:0 | gzip > ../out/tiny_ramdisk.cpio.gz
+: 1762228080:0;ls -lh ../out
+: 1762228084:0;cd ..
+: 1762228134:0;magiskboot unpack --help
+: 1762228153:0;cd out
+: 1762228154:0;ls
+: 1762228166:0;magiskboot unpack ../stock_boot_a.img
+: 1762228167:0;ls
+: 1762228180:0;cd ..
+: 1762228181:0;ls
+: 1762228183:0;ls unpack
+: 1762228188:0;cd tiny_ramdisk
+: 1762228190:0;find . -print0 | cpio --null -o --format=newc -R 0:0 | gzip > ../out/tiny_ramdisk.cpio.gz
+: 1762228193:0;cd ../out
+: 1762228193:0;ls
+: 1762228210:0;mv tiny_ramdisk.cpio.gz ramdisk.cpio
+: 1762228211:0;git st
+: 1762228240:0;magiskboot repack ../stock_boot_a.img
+: 1762228249:0;mv new-boot.img tiny_boot_a.img
+: 1762228256:0;avbtool.py info_image --image tiny_boot_a.img
+: 1762228264:0;ls
+: 1762228267:0;mv tiny_boot_a.img ..
+: 1762228269:0;cd ..
+: 1762228269:0;ls
+: 1762228301:0;cd out
+: 1762228301:0;ls
+: 1762228307:0;cd ../tiny_ramdisk
+: 1762228307:0;ls
+: 1762228310:0;file init
+: 1762228342:0;readelf -l init | grep interpreter
+: 1762228357:0;man readelf
+: 1762228366:0;readelf -l init
+: 1762228408:0;git st
+: 1762228414:0;cd ..
+: 1762228415:0;vim .gitignore
+: 1762228433:0;git st
+: 1762228438:0;ls out
+: 1762228446:0;git ad
+: 1762228452:0;git restore --staged out
+: 1762228452:0;git st
+: 1762228463:0;git co -m "Fix sbin permissions\
+"
+: 1762228463:0;git st
+: 1762228464:0;git ad
+: 1762228472:0;git co -m "Setup compressed tiny ramdisk"
+: 1762228472:0;git st
+: 1762228615:0;ls
+: 1762228630:0;cp ../partition-dumps/lun0/recovery_a.bin stock_recovery_a.bin
+: 1762228630:0;ls
+: 1762228634:0;mkdir stock_recovery
+: 1762228639:0;cd stock_recovery
+: 1762228649:0;magiskboot unpack ../stock_recovery_a.bin
+: 1762228650:0;ls
+: 1762228658:0;ls ../unpack
+: 1762228660:0;cd ..
+: 1762228664:0;mv unpack
+: 1762228678:0;mv unpack stock_ramdisk_cpio_unpacked
+: 1762228686:0;mkdir stock_recovery_cpio_unpacked
+: 1762228701:0;cd stock_recovery_cpio_unpacked
+: 1762228701:0;ls
+: 1762228721:0;gzip -dc ../stock_recovery/ramdisk.cpio | cpio -idmv
+: 1762228723:0;ls
+: 1762228727:0;cpio -idmv
+: 1762228747:0;cpio -idmv < ../stock_recovery/ramdisk.cpio
+: 1762228748:0;ls
+: 1762228755:0;ls -lh
+: 1762229039:0;cd ../
+: 1762229048:0;rm -rf stock_recovery_cpio_unpacked
+: 1762229049:0;git st
+: 1762229125:0;ls
+: 1762229139:0;mkdir stock_recovery_cpio_unpacked
+: 1762229144:0;cd stock_recovery_cpio_unpacked
+: 1762229150:0;cpio -idmv < ../stock_recovery/ramdisk.cpio
+: 1762229151:0;ls
+: 1762229153:0;ls apex
+: 1762229158:0;ls dev
+: 1762229163:0;ls odm
+: 1762229165:0;ls mnt
+: 1762229168:0;ls sys
+: 1762229170:0;ls system
+: 1762229175:0;ls system/bin/
+: 1762229206:0;cp system/*adbd* ../stock_bin/
+: 1762229212:0;cp system/bin/*adbd* ../stock_bin/
+: 1762229216:0;cd ../stock_bin
+: 1762229217:0;ls
+: 1762229220:0;chmod +x ./*
+: 1762229221:0;ls
+: 1762229276:0;file adbd
+: 1762229281:0;file minadbd
+: 1762229296:0;git st
+: 1762229375:0;cd ../stock_recovery_cpio_unpacked
+: 1762229376:0;ls
+: 1762229471:0;ls system/bin/init
+: 1762229478:0;ls -lh system/bin/init
+: 1762284228:0;ls
+: 1762284231:0;pwd
+: 1762284237:0;ls -lh ../tiny_
+: 1762284240:0;ls -lh ../tiny_ramdisk
+: 1762284245:0;ls ../out
+: 1762302621:0;git st
+: 1762302623:0;git di
+: 1762302629:0;git st
+: 1762302631:0;cd ..
+: 1762302631:0;git st
+: 1762302637:0;git add stock_bin/
+: 1762302642:0;git log
+: 1762302646:0;git di
+: 1762302655:0;ls
+: 1762302660:0;git di
+: 1762302667:0;git add stock_bin
+: 1762302667:0;git st
+: 1762302669:0;git di HEAD
+: 1762302690:0;git log
+: 1762302712:0;git co -m "Set binaries to executable"
+: 1762302713:0;git st
+: 1762302719:0;cat .gitignore
+: 1762302740:0;git add stock_ramdisk_cpio_unpacked/
+: 1762302740:0;git st
+: 1762302745:0;git add unpack/
+: 1762302747:0;git st
+: 1762302760:0;git co -m "Rename ambiguous ramdisk folder"
+: 1762302760:0;git st
+: 1762302761:0;git di
+: 1762303440:0;git st
+: 1762303441:0;git di
+: 1762303444:0;ls stock_recovery
+: 1762303453:0;ls stock_recovery_cpio_unpacked
+: 1762303468:0;ls -lh tiny_ramdisk 
+: 1762303487:0;ls stock_recovery_cpio_unpacked/system/bin
+: 1762303496:0;ls -lh stock_recovery_cpio_unpacked/system/bin
+: 1762303531:0;ls -lh workspace/tiny_ramdisk/sbin/
+: 1762303542:0;git st
+: 1762303546:0;ls workspace/tiny_
+: 1762303547:0;ls workspace/tiny_ramdisk
+: 1762303551:0;ls workspace/tiny_ramdisk/sbin/
+: 1762303587:0;cp workspace/stock_recovery_cpio_unpacked/system/bin/{minadbd,toybox} workspace/tiny_sbin/
+: 1762303594:0;cp workspace/stock_recovery_cpio_unpacked/system/bin/{minadbd,toybox} workspace/tiny_ramdisk/sbin/
+: 1762303597:0;git st
+: 1762303613:0;ls -lhA workspace/tiny_ramdisk/sbin
+: 1762303639:0;cp workspace/stock_recovery_cpio_unpacked/system/bin/init workspace/tiny_ramdisk/init 
+: 1762303648:0;vim ~/.zsh_history
+: 1762303656:0;cd workspace/tiny_ramdisk
+: 1762303658:0;file init
+: 1762303664:0;git st
+: 1762303671:0;readelf -l init
+: 1762303741:0;ls ../stock_recovery_cpio_unpacked/system/bin/ueventd ./sbin/
+: 1762303746:0;cp ../stock_recovery_cpio_unpacked/system/bin/ueventd ./sbin/
+: 1762303750:0;ls sbin
+: 1762303752:0;git st
+: 1762303758:0;git add sbin
+: 1762303758:0;git st
+: 1762303771:0;git co -m "Update sbin with recovery binaries"
+: 1762303772:0;git st
+: 1762303773:0;git add init
+: 1762303780:0;git co -m "Replace init with recovery init"
+: 1762303781:0;git st
+: 1762303863:0;cd ..
+: 1762303865:0;tree tiny_ramdisk
+: 1762303895:0;ls -lh tiny_ramdisk/ tiny_ramdisk/sbin/
+: 1762303914:0;git st
+: 1762304011:0;ls 
+: 1762304015:0;cd tiny_ramdisk
+: 1762304024:0;ls out
+: 1762304033:0;mv out out.bak
+: 1762304035:0;mkdir out
+: 1762304037:0;find . -print0 | cpio --null -o --format=newc -R 0:0 | gzip > ../out/tiny_ramdisk.cpio.gz
+: 1762304051:0;cd out
+: 1762304055:0;magiskboot unpack ../stock_recovery_a.bin
+: 1762304056:0;ls
+: 1762304060:0;mb tiny_ramdisk.cpio.gz ramdisk.cpio
+: 1762304064:0;mv tiny_ramdisk.cpio.gz ramdisk.cpio
+: 1762304508:0;git st
+: 1762304514:0;git add ./
+: 1762304515:0;git st
+: 1762304519:0;ls
+: 1762304524:0;ls -lh
+: 1762304542:0;magiskboot repack ../stock_boot_a.img
+: 1762304545:0;ls -lh
+: 1762304552:0;mv new-boot.img ../tiny_boot_a.img
+: 1762304553:0;git st
+: 1762304556:0;cd ..
+: 1762304556:0;ls
+: 1762304557:0;git st
+: 1762304565:0;ls -lh
+: 1762304583:0;mv stock_ramdisk stock_boot
+: 1762304592:0;mv stock_ramdisk_cpio_unpacked stock_boot_ramdisk
+: 1762304593:0;git st
+: 1762304598:0;git add ./stock_boot*
+: 1762304603:0;git st
+: 1762304621:0;git co -m "Repack new tiny ramdisk"
+: 1762304621:0;git st
+: 1762305988:0;exit
+: 1762306002:0;ls
+: 1762306013:0;cd ..
+: 1762306017:0;export PATH="$PATH:$(pwd)/scripts"
+: 1762306049:0;diff "$(avbtool.py info_image --image workspace/tiny_boot_a.img)" "$(avbtool.py info_image --image workspace/stock_boot_a.img)"
+: 1762306061:0;man diff
+: 1762306100:0;cd workspace
+: 1762306122:0;avbtool.py info_image --image tiny_boot_a.img >avb_headers_tiny.txt
+: 1762306132:0;avbtool.py info_image --image stock_boot_a.img >avb_headers_stock.txt
+: 1762306135:0;diff avb_headers_*
+: 1762306152:0;ls
+: 1762306160:0;ls -lh
+: 1762306297:0;git st
+: 1762306669:0;cd tiny_ramdisk/sbin
+: 1762306669:0;ls
+: 1762306719:0;readelf -l adbd
+: 1762306738:0;man readelf
+: 1762306931:0;readelf -l minadbd
+: 1762306973:0;readelf -d ../init | grep NEEDED
+: 1762307139:0;readelf -d ./* | grep NEEDED
+: 1762307154:0;cd ../..
+: 1762307154:0;ls
+: 1762307167:0;vim readelf.md
+: 1762307201:0;exit
+: 1762307410:0;adb devices
+: 1762307427:0;adb reboot edl
+: 1762307432:0;adb devices
+: 1762307438:0;which edl
+: 1762307444:0;cd edl
+: 1762307445:0;source .venv/bin/activate
+: 1762307448:0;cd ..
+: 1762307451:0;edl --help
+: 1762307466:0;ls
+: 1762307495:0;edl --loader sm6225.bin w boot_a workspace/tiny_boot_a.img 
+: 1762307503:0;edl reset
+: 1762307522:0;adb devices
+: 1762307552:0;ls workspace
+: 1762307570:0;cp partition-dumps/lun4/boot_b.bin workspace/stock_boot_b.img 
+: 1762307573:0;cd workspace
+: 1762307573:0;ls
+: 1762307575:0;cd out
+: 1762307575:0;ls
+: 1762307580:0;cd ../tiny_ramdisk
+: 1762307580:0;ls
+: 1762307588:0;cd ../out
+: 1762307593:0;ls ..
+: 1762307600:0;magiskboot repack ../stock_boot_b.img
+: 1762307615:0;mv new-boot.img ../tiny_boot_b.img 
+: 1762307617:0;cd ../..
+: 1762307621:0;adb reboot edl
+: 1762307625:0;adb devices
+: 1762307630:0;edl printgpt
+: 1762307646:0;edl --loader sm6225.bin printgpt
+: 1762307707:0;edl --help
+: 1762307720:0;edl --loader sm6225.bin printgpt
+: 1762307731:0;edl reset
+: 1762308188:0;adb devices
+: 1762308197:0;adb get-state
+: 1762308201:0;adb get-state --help
+: 1762308239:0;adb shell getprop
+: 1762308259:0;adb shell getprop | grep slot
+: 1762308270:0;adb reboot edl
+: 1762308277:0;adb devices
+: 1762308292:0;edl --loader sm6225.bin w boot_b workspace/tiny_boot_b.img 
+: 1762308301:0;edl reset
+: 1762308313:0;adb devices
+: 1762308400:0;edl --loader sm6225.bin r logdump pstore.log
+: 1762308480:0;adb devices
+: 1762308490:0;edl --loader sm6225.bin printgpt
+: 1762309136:0;lsusb
+: 1762309177:0;adb devices
+: 1762309180:0;edl --loader sm6225.bin printgpt
+: 1762309189:0;cd edl
+: 1762309191:0;source .venv/bin/activate
+: 1762309192:0;cd ..
+: 1762309194:0;edl --loader sm6225.bin r logdump pstore.log
+: 1762309216:0;ls
+: 1762309218:0;ls -l
+: 1762309226:0;ls memory
+: 1762309228:0;ls -l memory
+: 1762309234:0;ls -lh memory
+: 1762309308:0;edl --loader sm6225.bin r logdump pstore.log
+: 1762309318:0;adb devices
+: 1762309341:0;ls -lh memory/
+: 1762309342:0;ls
+: 1762309464:0;mv memory memory-dumps
+: 1762309520:0;ls
+: 1762309523:0;cd workspace/tiny_ramdisk
+: 1762309524:0;ls
+: 1762309536:0;ls sys
+: 1762309538:0;mkdir system
+: 1762309562:0;cp ../stock_recovery_cpio_unpacked/system/bin/linker64 system/
+: 1762309564:0;ls system
+: 1762309574:0;mkdir system/{bin,lib64}
+: 1762309582:0;mv system/linker64 system/bin/
+: 1762309605:0;cp ../stock_recovery_cpio_unpacked/system/lib64/* system/lib64
+: 1762309611:0;ls ../stock_recovery_cpio_unpacked/system/lib64/hw
+: 1762309629:0;cp -r ../stock_recovery_cpio_unpacked/system/lib64/hw system/lib64/hw
+: 1762309630:0;git st
+: 1762309643:0;find . -print0 | cpio --null -o --format=newc -R 0:0 | gzip > ../out/tiny_ramdisk.cpio.gz
+: 1762309651:0;cd ../out
+: 1762309651:0;ls
+: 1762309682:0;ls ../stock_boot
+: 1762309689:0;ls ../stock_boot/debug_ramdisk
+: 1762309700:0;ls ../stock_boot_ramdisk
+: 1762309708:0;cd ../tiny_ramdisk
+: 1762309720:0;find . -print0 | cpio --null -o --format=newc -R 0:0 > ../out/tiny_ramdisk.cpio
+: 1762309727:0;cd ../out
+: 1762309728:0;ls
+: 1762309732:0;rm tiny_ramdisk.cpio.gz
+: 1762309736:0;mv tiny_ramdisk.cpio ramdisk.cpio
+: 1762309739:0;cd ../..
+: 1762309742:0;export PATH="$PATH:$(pwd)/scripts/magisk"
+: 1762309745:0;cd workspace/out
+: 1762309749:0;magiskboot repack ../stock_boot_a.img
+: 1762309753:0;git st
+: 1762309755:0;cd ..
+: 1762309756:0;git st
+: 1762309765:0;mv readelf.md elf_missing.md
+: 1762309782:0;mv avb_headers_stock.txt avb_headers_stock_a_v1.txt
+: 1762309791:0;mv avb_headers_tiny.txt avb_headers_tiny_a_v1.txt
+: 1762309796:0;git add ./*.{txt,md}
+: 1762309796:0;git st
+: 1762309805:0;cat ../edl
+: 1762309807:0;cat ../edl_config.json
+: 1762309813:0;ls out.bak
+: 1762309820:0;rm -r out.bak
+: 1762309820:0;ls
+: 1762309821:0;git st
+: 1762309838:0;ls -lh
+: 1762310467:0;mv stock_recovery_a.bin stock_recovery_a.img
+: 1762310469:0;git st
+: 1762310566:0;git co -m "Save text artifacts"
+: 1762310566:0;git st
+: 1762310570:0;git add tiny_ramdisk/
+: 1762310577:0;git co -m "Add linking necessities"
+: 1762310578:0;git st
+: 1762310586:0;git co --amend
+: 1762310596:0;git st
+: 1762310698:0;cd out
+: 1762310700:0;git st
+: 1762310707:0;ls
+: 1762310735:0;mv ../tiny_boot_a.img ../tiny_boot_a_v1.img
+: 1762310740:0;mv ../tiny_boot_b.img ../tiny_boot_b_v1.img
+: 1762310741:0;git st
+: 1762310856:0;magiskboot repack ../stock_boot_a.img
+: 1762310894:0;mv new-boot.img ../tiny_boot_a.img
+: 1762310901:0;magiskboot repack ../stock_boot_b.img
+: 1762310908:0;mv new-boot.img ../tiny_boot_b.img
+: 1762310911:0;cd ../..
+: 1762310914:0;exit
+: 1762310926:0;edl --loader sm6225.bin w boot_b workspace/tiny_boot_b.img 
+: 1762311263:0;lsusb
+: 1762311516:0;edl --loader sm6225.bin w boot_b workspace/tiny_boot_b.img 
+: 1762311556:0;adb devices
+: 1762311557:0;exit
+: 1762311645:0;lsusb
+: 1762311651:0;watch lsusb
+: 1762311932:0;git st
+: 1762311944:0;git add workspace/out
+: 1762311944:0;git st
+: 1762311952:0;mv memory-dumps memory-dumps-v1
+: 1762311965:0;mv memory memory-dumps-v2
+: 1762311966:0;git st
+: 1762311978:0;git log
+: 1762311986:0;git add workspace/stock_ramdisk_cpio_unpacked
+: 1762311987:0;git st
+: 1762311993:0;git restore --staged workspace/out/
+: 1762311993:0;git st
+: 1762311995:0;git co --amend
+: 1762311998:0;git st
+: 1762312000:0;git add workspace/out/
+: 1762312001:0;git st
+: 1762312004:0;git add edl_config.json
+: 1762312006:0;git log
+: 1762312017:0;git co -m "Update ramdisk for shared objects"
+: 1762312017:0;git st
+: 1762312019:0;git pushf
+: 1762312036:0;git st
+: 1762312440:0;watch lsusb
+: 1762312465:0;adb devices
+: 1762312575:0;exit
